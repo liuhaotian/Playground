@@ -48,15 +48,15 @@ def main()
     xmax = xmax.to_i
     ymax = ymax.to_i
 
+    f = open('output.txt', "w")
     for i in (1..lines.length-1).step(2)
         myrover = Rover.new(lines[i].split[0].to_i, lines[i].split[1].to_i, lines[i].split[2])
         #print myrover.position
         lines[i + 1].strip.each_char do |char|myrover.execute(char) end
-        open('output.txt', 'a') { |f|
-            f << myrover.position
-        }
+        f << myrover.position
         #print myrover.position
     end
+    f.close
 end
 
 if __FILE__ == $0
