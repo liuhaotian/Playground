@@ -1,1 +1,1 @@
-#/usr/bin/ruby
+#/usr/bin/ruby -w
